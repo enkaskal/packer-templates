@@ -12,7 +12,7 @@
       "source_ami": "ami-d732f0b7",
       "instance_type": "m3.medium",
       "ssh_username": "ubuntu",
-      "ami_name": "cssds-{{timestamp}}"
+      "ami_name": "tf2ds-{{timestamp}}"
     }
   ],
   "provisioners": [
@@ -35,11 +35,6 @@
     },
     {
       "type": "file",
-      "source": "./cstrike/cfg",
-      "destination": "/tmp"
-    },
-    {
-      "type": "file",
       "source": "./etc/init",
       "destination": "/tmp"
     },
@@ -55,9 +50,8 @@
         "sudo rm /var/lib/apt/lists/*",
         "sudo shred -u /etc/ssh/*_key /etc/ssh/*_key.pub",
         "sudo install --owner=root --group=root --mode=0644 /tmp/cloud/cloud.cfg /etc/cloud/cloud.cfg",
-        "sudo -u steam /home/steam/steamcmd/steamcmd.sh +login anonymous +force_install_dir /home/steam/cssds +app_update 232330 +quit",
-        "sudo install --owner=steam --group=steam --mode=0644 /tmp/cfg/server.cfg /home/steam/cssds/cstrike/cfg/server.cfg",
-        "sudo install --owner=root --group=root --mode=0644 /tmp/init/cssds.conf /etc/init/cssds.conf",
+        "sudo -u steam /home/steam/steamcmd/steamcmd.sh +login anonymous +force_install_dir /home/steam/tf2ds +app_update 232250 +quit",
+        "sudo install --owner=root --group=root --mode=0644 /tmp/init/tf2ds.conf /etc/init/tf2ds.conf",
         "sudo mv /home/ubuntu /home/ec2-user",
         "sudo rm /home/ec2-user/.ssh/authorized_keys",
         "sudo sed -i s/ubuntu/ec2-user/g /etc/group",
