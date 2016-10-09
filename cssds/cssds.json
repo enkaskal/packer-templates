@@ -57,6 +57,7 @@
         "sudo install --owner=root --group=root --mode=0644 /tmp/cloud/cloud.cfg /etc/cloud/cloud.cfg",
         "sudo -u steam /home/steam/steamcmd/steamcmd.sh +login anonymous +force_install_dir /home/steam/cssds +app_update 232330 +quit",
         "sudo install --owner=steam --group=steam --mode=0644 /tmp/cfg/server.cfg /home/steam/cssds/cstrike/cfg/server.cfg",
+        "sudo install --owner=steam --group=steam --mode=0644 /tmp/cfg/mapcycle.txt /home/steam/cssds/cstrike/cfg/mapcycle.txt",
         "sudo install --owner=root --group=root --mode=0644 /tmp/init/cssds.conf /etc/init/cssds.conf",
         "sudo mv /home/ubuntu /home/ec2-user",
         "sudo rm /home/ec2-user/.ssh/authorized_keys",
